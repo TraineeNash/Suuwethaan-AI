@@ -3,10 +3,11 @@ from flask import Flask,request,jsonify
 from flask import send_from_directory
 import os
 from flask_cors import CORS
+
 app = Flask(__name__)
 
 CORS(app,resources={r"/*": {"origins": "*"}})
-client = genai.Client(api_key="AQ.Ab8RN6IAwQHDE0GiuseOInQBala8gJAUKxmolSmuR8ljmxi9kg")
+client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
 @app.route('/')
 def home():
@@ -30,4 +31,5 @@ def summary():
     print("AI:", response.text)
     return jsonify({"summary": response.text})
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0",port=port)
