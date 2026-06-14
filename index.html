@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Study Companion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes gradient-x {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+    .animate-gradient {
+      background-size: 200% 200%;
+      animation: gradient-x 6s ease infinite;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-400 via-blue-500 to-green-400 animate-gradient">
+  <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-6 text-center">
+  
+    <h1 class="text-2xl font-bold text-gray-800 mb-4">AI Study Companion</h1>
+    
+  
+    <textarea 
+      id="noteInput"
+      class="w-full h-32 border border-gray-300 rounded-md p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400"
+      placeholder="Enter text here..."
+    ></textarea>
+    
+   
+    <button 
+      id="generateBtn"
+      class="mt-4 w-full bg-red-500 text-white font-semibold py-2 rounded-md transition duration-500 ease-in-out hover:bg-pink-500 animate-pulse"
+    >
+      Generate notes
+    </button>
+    
+   
+    <p id="infoText" class="hidden mt-4 text-sm text-gray-600">
+      The provided text is a random sequence of characters (a ‘keyboard mash’) and contains no meaningful content to summarize.
+    </p>
+  </div>
+  
+<script src="script.js"></script>
+</body>
+</html>
