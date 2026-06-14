@@ -6,7 +6,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 
 CORS(app,resources={r"/*": {"origins": "*"}})
-client = genai.Client(api_key="AQ.Ab8RN6I5C4yJMo9izH_L4PfiRkN3MaJT34kjHAuBOQohT5Pd8g")
+client = genai.Client(api_key="AQ.Ab8RN6IAwQHDE0GiuseOInQBala8gJAUKxmolSmuR8ljmxi9kg")
 
 @app.route('/')
 def home():
