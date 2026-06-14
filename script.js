@@ -4,7 +4,7 @@ const paragraph = document.querySelector("#infoText");
 button.addEventListener("click",async (e) => {
    const text = textarea.value;
  try {
-   const req = await fetch ("https://gemini-notes-summary.onrender.com/summary", { 
+   const req = await fetch ("https://suuwethaan-ai.onrender.com/summary", { 
     method: "POST",
     headers: {
       "Content-Type": "application/json"
